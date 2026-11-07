@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Projects | Aishat Abu-sule</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Internal CSS for the project overview table -->
+    <style>
+        .project-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+        }
+
+        .project-table th,
+        .project-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .project-table th {
+            background-color: #f4a261;
+            color: #222;
+        }
+
+        .project-table tr:nth-child(even) {
+            background-color: #f9f5ef;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <a href="index.html" class="logo">
+            <span class="logo-badge">AA</span>
+            Aishat Abu-sule
+        </a>
+ 
+        <!-- NAVIGATION -->
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="site-navigation" aria-label="Primary navigation">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="planner.html">Academic Planner</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- PAGE INTRODUCTION -->
+        <section class="page-banner">
+
+            <h1>My <span class="highlight">Projects</span></h1>
+
+            <p>
+                Welcome to my project collection. Here, I showcase my creativity,
+                practical work and progress as I develop my skills in Software
+                Engineering and web development.
+            </p>
+
+        </section>
+
+
+        <!-- FEATURED PROJECTS -->
+        <section class="content-section">
+
+            <h2 class="section-title">Featured Projects</h2>
+
+            <p class="section-intro">
+                These projects reflect my learning journey, creativity and
+                growing interest in technology.
+            </p>
+
+
+            <div class="projects-grid">
+
+
+                <!-- PROJECT 1 -->
+                <article class="project-card">
+
+                    <figure class="project-img">
+
+                        <img
+                            src="images/project1.png"
+                            alt="Screenshot of my personal portfolio website">
+
+                    </figure>
+
+
+                    <div class="project-body">
+
+                        <h3>Personal Portfolio Website</h3>
+
+                        <p>
+                            A personal multi-page website created to introduce
+                            myself, showcase my educational background, share
+                            my interests and present my journey as a Software
+                            Engineering student.
+                        </p>
+
+                        <ul class="tags">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+
+                        <div class="project-links">
+
+                            <a href="index.html" class="btn btn-small">
+                                View Website
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 2 -->
+                <article class="project-card">
+
+                    <figure class="project-img">
+
+                        <img
+                            src="images/project2.png"
+                            alt="Screenshot of my academic planner">
+
+                    </figure>
+
+
+                    <div class="project-body">
+
+                        <h3>Academic Planner</h3>
+
+                        <p>
+                            A student organisation project designed to help
+                            manage academic activities, assignments and
+                            study tasks in an organised way.
+                        </p>
+
+                        <ul class="tags">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+
+                        <div class="project-links">
+
+                            <a href="planner.html" class="btn btn-small">
+                                View Planner
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 3 -->
+                <article class="project-card">
+
+                    <figure class="project-img">
+
+                        <img
+                            src="images/project3.png"
+                            alt="Screenshot of my contact page">
+
+                    </figure>
+
+
+                    <div class="project-body">
+
+                        <h3>Contact Page</h3>
+
+                        <p>
+                            A web page designed to make communication easier
+                            by providing visitors with my contact information
+                            and an organised contact form.
+                        </p>
+
+                        <ul class="tags">
+                            <li>HTML Forms</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+
+                        <div class="project-links">
+
+                            <a href="contact.html" class="btn btn-small">
+                                View Contact Page
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PROJECT OVERVIEW TABLE -->
+        <section class="content-section alt-section">
+
+            <h2 class="section-title">Project Overview</h2>
+
+            <p class="section-intro">
+                A summary of my projects and the technologies I am learning
+                    and applying.
+            </p>
+
+
+            <table class="project-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Project</th>
+                        <th>Technologies</th>
+                        <th>Purpose</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+                        <td>Personal Portfolio</td>
+                        <td>HTML, CSS, JavaScript</td>
+                        <td>Present my profile and skills</td>
+                    </tr>
+
+                    <tr>
+                        <td>Academic Planner</td>
+                        <td>HTML, CSS, JavaScript</td>
+                        <td>Organise academic activities</td>
+                    </tr>
+
+                    <tr>
+                        <td>Contact Page</td>
+                        <td>HTML, CSS, JavaScript</td>
+                        <td>Provide contact information</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+
+        <!-- MY LEARNING JOURNEY -->
+        <section class="content-section">
+
+            <h2 class="section-title">My Learning Journey</h2>
+
+            <p>
+                I believe practical experience is an important part of becoming
+                a good software engineer. Through personal projects and
+                coursework, I am learning how to turn ideas into functional
+                web pages.
+            </p>
+
+            <p>
+                I look forward to exploring software development, mobile
+                application development and artificial intelligence as
+                I continue to improve my technical skills.
+            </p>
+
+            <p>
+                Every project is another opportunity to learn, experiment
+                and grow.
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <p>
+            &copy; <span id="year">2026</span>
+            Aishat Abu-sule. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

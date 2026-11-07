@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Me | Aishat Ikpemosi Abu-sule</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+
+    <style>
+        /* CONTACT PAGE DESIGN */
+
+        .contact-hero {
+            text-align: center;
+            padding: 65px 20px 45px;
+            background: linear-gradient(135deg, #fff7ed, #f0fdf4);
+        }
+
+        .contact-hero .eyebrow {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 30px;
+            background: #e5f5e9;
+            color: #287443;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin: 0 0 15px;
+            color: #183b2a;
+        }
+
+        .contact-hero h1 span {
+            color: #e58a24;
+        }
+
+        .contact-hero p {
+            max-width: 620px;
+            margin: auto;
+            line-height: 1.8;
+            color: #647067;
+        }
+
+        .contact-wrapper {
+            max-width: 1150px;
+            margin: 55px auto;
+            padding: 0 20px 50px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .contact-info-card,
+        .contact-form-card {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(30, 60, 40, 0.08);
+            border: 1px solid #edf1ed;
+        }
+
+        .contact-info-card {
+            background: linear-gradient(145deg, #174b32, #226344);
+            color: #ffffff;
+        }
+
+        .contact-info-card h2,
+        .contact-form-card h2 {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .contact-info-card > p {
+            color: #d7eadc;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin: 23px 0;
+        }
+
+        .contact-icon {
+            width: 43px;
+            height: 43px;
+            min-width: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.14);
+            font-size: 19px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .contact-item a,
+        .contact-item span {
+            color: #e2f1e6;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+            font-size: 14px;
+        }
+
+        .contact-item a:hover {
+            color: #ffc477;
+            text-decoration: underline;
+        }
+
+        .contact-socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-socials a {
+            padding: 9px 14px;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .contact-socials a:hover {
+            background: #ffffff;
+            color: #174b32;
+        }
+
+        .contact-form-card > p {
+            color: #748078;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .contact-form-card .form-group {
+            margin-bottom: 19px;
+        }
+
+        .contact-form-card label {
+            display: block;
+            margin-bottom: 8px;
+            color: #263a2e;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .contact-form-card input,
+        .contact-form-card textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px 15px;
+            border: 1px solid #dce5de;
+            border-radius: 10px;
+            background: #f9fbf9;
+            color: #263a2e;
+            font: inherit;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .contact-form-card input:focus,
+        .contact-form-card textarea:focus {
+            outline: none;
+            border-color: #e58a24;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(229,138,36,0.12);
+        }
+
+        .contact-form-card textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .contact-form-card .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #e58a24;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-form-card .btn:hover {
+            background: #c96e12;
+            transform: translateY(-2px);
+        }
+
+        .contact-form-card .btn:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .error-text {
+            display: block;
+            color: #d32f2f;
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        .success-box {
+            margin-top: 15px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 800px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info-card,
+            .contact-form-card {
+                padding: 25px;
+            }
+
+            .contact-hero {
+                padding: 45px 18px 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="logo">
+            <span class="logo-badge">AA</span>
+            Aishat Abu-sule
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="site-navigation" aria-label="Primary navigation">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="planner.html">Academic Planner</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="contact-hero">
+            <span class="eyebrow">LET'S CONNECT</span>
+
+            <h1>Get In <span>Touch</span></h1>
+
+            <p>
+                Every great connection begins with a conversation.
+                Whether you have a question, collaboration idea, or opportunity,
+                I'd be happy to hear from you.
+            </p>
+        </section>
+
+        <section class="contact-wrapper">
+
+            <div class="contact-grid">
+
+                <!-- CONTACT INFORMATION -->
+
+                <aside class="contact-info-card">
+
+                    <h2>Let's Talk!</h2>
+
+                    <p>
+                        I'm Aishat Ikpemosi Abu-sule, a Software Engineering
+                        student at Miva Open University. Feel free to reach
+                        out through any of the channels below.
+                    </p>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">👤</div>
+                        <div>
+                            <strong>Full Name</strong>
+                            <span>Aishat Ikpemosi Abu-sule</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email Address</strong>
+                            <a href="mailto:a.abu-sule8981@miva.edu.ng">
+                                a.abu-sule8981@miva.edu.ng
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <a href="https://wa.me/2348132851181"
+                               target="_blank" rel="noopener">
+                                08132851181
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🎓</div>
+                        <div>
+                            <strong>Institution</strong>
+                            <span>Miva Open University</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Location</strong>
+                            <span>Nigeria</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-socials">
+                        <a href="https://github.com/AbusuleAishat"
+                           target="_blank" rel="noopener">GitHub</a>
+
+                        <a href="https://ng.linkedin.com/in/abusule-ikpemosi-b1b696449"
+                           target="_blank" rel="noopener">LinkedIn</a>
+
+                        <a href="https://wa.me/2348132851181"
+                           target="_blank" rel="noopener">WhatsApp</a>
+                    </div>
+
+                </aside>
+
+
+                <!-- MESSAGE FORM -->
+
+                <div class="contact-form-card">
+
+                    <h2>Send Me a Message</h2>
+
+                    <p>
+                        Fill in the details below and leave me a message.
+                        I'll be happy to connect with you.
+                    </p>
+
+                    <form id="contactForm" novalidate>
+
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                maxlength="60"
+                                required
+                            >
+
+                            <small class="error-text" id="nameError"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                            >
+
+                            <small class="error-text" id="emailError"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter numbers only"
+                                inputmode="numeric"
+                                maxlength="15"
+                                autocomplete="tel"
+                                required
+                            >
+
+                            <small class="error-text" id="phoneError"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="5"
+                                placeholder="Write your message here..."
+                                minlength="10"
+                                required
+                            ></textarea>
+
+                            <small class="error-text" id="messageError"></small>
+                        </div>
+
+                        <button type="submit" class="btn" id="sendButton">
+                            Send Message →
+                        </button>
+
+                        <p id="successMessage" class="success-box"
+                           aria-live="polite"></p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            &copy; <span id="year">2026</span>
+            Aishat Ikpemosi Abu-sule. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+
+</body>
+</html>

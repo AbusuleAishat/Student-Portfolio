@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aishat Abu-sule's personal academic planner at Miva Open University.">
+    <title>Academic Planner | Aishat Abu-sule</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="logo">
+            <span class="logo-badge">AA</span>
+            Aishat Abu-sule
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="site-navigation" aria-label="Primary navigation">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="planner.html" class="active">Academic Planner</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Page Introduction -->
+        <section class="page-banner">
+            <h1>My Academic <span class="highlight">Planner</span></h1>
+
+            <p>
+                Staying organised, learning consistently and making progress
+                towards my academic goals as a Software Engineering student.
+            </p>
+        </section>
+
+        <!-- Academic Information -->
+        <section class="content-section">
+
+            <div class="planner-card">
+
+                <h2 class="section-title">My Academic Journey</h2>
+
+                <p>
+                    Welcome to my personal academic planner!
+                    As a Software Engineering student at Miva Open University,
+                    I believe that consistency, discipline and effective
+                    time management are essential for academic success.
+                </p>
+
+                <div class="academic-info">
+                    <p><strong>Student:</strong> Abu-sule Ikpemosi Aishat</p>
+                    <p><strong>Institution:</strong> Miva Open University</p>
+                    <p><strong>Programme:</strong> Bsc Software Engineering</p>
+                    <p><strong>Level:</strong> 100 Level</p>
+                    <p><strong>Semester:</strong> Second Semester</p>
+                    <p><strong>Target CGPA:</strong> 5.0</p>
+                </div>
+
+                <hr>
+
+                <!-- Task Management -->
+                <h2 class="section-title">My Study Tasks</h2>
+
+                <p>
+                    Use this planner to add assignments, organise study
+                    sessions, track deadlines and monitor completed tasks.
+                </p>
+
+                <form id="taskForm" class="task-form" novalidate>
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Enter your academic task..."
+                        aria-label="Task description"
+                        required
+                    >
+
+                    <input
+                        type="date"
+                        id="taskDate"
+                        aria-label="Task due date"
+                    >
+
+                    <button type="submit" class="btn">
+                        Add Task
+                    </button>
+
+                </form>
+
+                <p id="formMessage" class="form-message" aria-live="polite"></p>
+
+                <!-- Task Statistics -->
+                <div class="planner-stats">
+
+                    <span class="stat">
+                        Total: <strong id="totalCount">0</strong>
+                    </span>
+
+                    <span class="stat stat-green">
+                        Completed: <strong id="doneCount">0</strong>
+                    </span>
+
+                    <span class="stat stat-orange">
+                        Remaining: <strong id="leftCount">0</strong>
+                    </span>
+
+                </div>
+
+                <!-- Task Filters -->
+                <div class="filters">
+
+                    <button
+                        type="button"
+                        class="filter-btn active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="active"
+                    >
+                        Active
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="completed"
+                    >
+                        Completed
+                    </button>
+
+                </div>
+
+                <!-- Task Display -->
+                <ul id="taskList" class="task-list"></ul>
+
+                <p id="emptyMessage" class="empty-message">
+                    No tasks yet. Add your first academic task above!
+                </p>
+
+                <!-- Clear Completed Tasks -->
+                <button
+                    type="button"
+                    id="clearCompleted"
+                    class="btn btn-outline btn-small"
+                >
+                    Clear Completed Tasks
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            &copy; <span id="year">2026</span>
+            Aishat Abu-sule. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/planner.js"></script>
+
+</body>
+</html>

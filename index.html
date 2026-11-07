@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aishat Abu-sule | Student Portfolio</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="logo"><span class="logo-badge">AA</span> Aishat Abu-sule</a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="site-navigation" aria-label="Primary navigation">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="planner.html">Academic Planner</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <p id="greeting" class="greeting">You're Welcome</p>
+                <h1>Hi, I'm <span class="highlight">Aishat Ikpemosi Abu-sule</span></h1>
+                <p class="tagline">Software Engineering Student at MIVA Open University</p>
+                <p>
+                    Welcome to my personal portfolio and academic management website.
+                    Here you can learn about me, see my projects, and use my study planner.
+                </p>
+                <a href="projects.html" class="btn">View My Projects</a>
+                <a href="contact.html" class="btn btn-outline">Contact Me</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/profile.jpg" alt="Photograph of Aishat Abu-sule">
+            </div>
+        </section>
+<!-- Personal Introduction Video -->
+<section class="video-intro-section">
+    <div class="video-intro-container">
+
+        <div class="video-intro-heading">
+            <span class="video-eyebrow">A LITTLE INTRODUCTION</span>
+            <h2>Get to know me</h2>
+            <p>
+                A little about who I am, what I'm learning
+                and the journey I'm building in technology.
+            </p>
+        </div>
+
+        <div class="video-frame">
+            <video controls playsinline preload="metadata">
+                <source src="video/aishat-introduction.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+
+    </div>
+</section>
+        <section class="bio">
+            <h2>A Little About Me</h2>
+            <p>
+                I am a passionate Software Engineering student at Miva Open University with a strong
+                interest in technology and innovation. I enjoy learning new skills, solving problems,
+                and exploring creative ways to use technology. I am currently building my knowledge
+                in web development and programming. My goal is to become a skilled software engineer
+                and create solutions that make a positive impact.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year">2026</span> Aishat Abu-sule. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

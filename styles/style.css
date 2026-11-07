@@ -1,0 +1,2825 @@
+/* ---------- Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ---------- Colour scheme ---------- */
+:root {
+    --orange: #ff7a1a;
+    --orange-dark: #e56400;
+    --orange-soft: #fff1e6;
+    --green: #1faa59;
+    --green-dark: #148545;
+    --green-soft: #e7f8ee;
+    --black: #111111;
+    --grey: #444444;
+    --line: #ececec;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.7;
+}
+
+a { text-decoration: none; }
+
+/* ---------- Header and navigation ---------- */
+.site-header {
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 16px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    border-bottom: 3px solid var(--orange);
+}
+
+.logo {
+    color: var(--black);
+    font-size: 1.7rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.logo:hover { color: var(--orange); }
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 26px;
+}
+
+.nav-links a {
+    color: var(--black);
+    font-weight: 500;
+    padding: 6px 2px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+    border-bottom-color: var(--green);
+}
+
+.nav-links a.active {
+    color: var(--orange);
+    border-bottom-color: var(--orange);
+}
+
+/* ---------- Hero section (homepage) ---------- */
+.hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 80px 8%;
+    background: linear-gradient(135deg, #ffffff 55%, var(--orange-soft) 100%);
+}
+
+/* soft decorative circles */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 280px;
+    height: 280px;
+    background: var(--green-soft);
+    border-radius: 50%;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -90px;
+    left: -60px;
+    width: 220px;
+    height: 220px;
+    background: var(--orange-soft);
+    border-radius: 50%;
+}
+
+.hero-text,
+.hero-image {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text { flex: 1; animation: fadeUp 1s ease; }
+
+.greeting {
+    display: inline-block;
+    background: var(--green-soft);
+    color: var(--green-dark);
+    font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin: 10px 0;
+    color: var(--black);
+}
+
+.highlight { color: var(--orange); }
+
+.tagline {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--green);
+    margin-bottom: 15px;
+}
+
+.hero-text p { color: var(--grey); }
+
+.hero-image { flex: 1; text-align: center; animation: fadeUp 1.2s ease; }
+
+.hero-image img {
+    width: 320px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 24px;
+    border: 5px solid var(--white);
+    box-shadow: 16px 16px 0 var(--orange);
+    transition: transform 0.4s;
+}
+
+.hero-image img:hover { transform: translateY(-8px); }
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    margin-top: 22px;
+    margin-right: 10px;
+    padding: 13px 30px;
+    background: var(--orange);
+    color: var(--white);
+    font-weight: 600;
+    border-radius: 30px;
+    border: 2px solid var(--orange);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--orange-dark);
+    border-color: var(--orange-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(255, 122, 26, 0.35);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--green);
+    border-color: var(--green);
+}
+
+.btn-outline:hover {
+    background: var(--green);
+    border-color: var(--green);
+    color: var(--white);
+    box-shadow: 0 8px 18px rgba(31, 170, 89, 0.35);
+}
+
+/* ---------- Content sections ---------- */
+.bio {
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 40px;
+    text-align: center;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--green);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.bio h2 {
+    color: var(--black);
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+}
+
+.bio h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--orange);
+    border-radius: 4px;
+    margin: 10px auto 0;
+}
+
+.bio p { color: var(--grey); }
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background: var(--white);
+    color: var(--black);
+    text-align: center;
+    padding: 22px;
+    margin-top: 40px;
+    border-top: 4px solid var(--green);
+}
+
+/* ---------- Animation ---------- */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Mobile-friendly (responsive) ---------- */
+@media (max-width: 768px) {
+    .site-header { flex-direction: column; gap: 10px; }
+    .nav-links { justify-content: center; gap: 14px; }
+    .hero { flex-direction: column-reverse; text-align: center; padding: 50px 6%; }
+    .hero h1 { font-size: 2.1rem; }
+    .hero-image img { width: 240px; height: 300px; box-shadow: 10px 10px 0 var(--orange); }
+    .bio { margin: 40px 20px; padding: 25px; }
+}/* ---------- Logo badge ---------- */
+.logo-badge {
+    display: inline-block;
+    background: var(--orange);
+    color: var(--white);
+    padding: 2px 10px;
+    border-radius: 10px;
+    margin-right: 6px;
+    font-size: 1.3rem;
+}/* ---------- Page banner (inner pages) ---------- */
+.page-banner {
+    text-align: center;
+    padding: 60px 8% 50px;
+    background: linear-gradient(135deg, #ffffff 50%, var(--orange-soft) 100%);
+    border-bottom: 1px solid var(--line);
+    animation: fadeUp 0.8s ease;
+}
+
+.page-banner h1 { font-size: 2.6rem; }
+.page-banner p  { color: var(--grey); }
+
+/* ---------- Content sections ---------- */
+.content-section {
+    padding: 60px 8%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.alt-section {
+    max-width: none;
+    background: #fafafa;
+}
+
+.alt-section > * {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--orange);
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.section-intro { color: var(--grey); margin-bottom: 15px; }
+
+/* ---------- Education table ---------- */
+.table-wrap { overflow-x: auto; }
+
+.edu-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.edu-table th {
+    background: var(--green);
+    color: var(--white);
+    text-align: left;
+    padding: 14px 16px;
+}
+
+.edu-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
+}
+
+.edu-table tbody tr { transition: 0.3s; }
+.edu-table tbody tr:hover { background: var(--orange-soft); }
+
+/* ---------- Goal list ---------- */
+.goal-list { list-style: none; }
+
+.goal-list li {
+    background: var(--white);
+    border-left: 5px solid var(--orange);
+    padding: 12px 18px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.goal-list li:hover {
+    border-left-color: var(--green);
+    transform: translateX(8px);
+}
+
+/* ---------- Skill bars ---------- */
+.skills { display: grid; gap: 22px; }
+
+.skill-head {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.bar {
+    height: 12px;
+    background: var(--line);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    width: var(--level);
+    background: linear-gradient(90deg, var(--orange), var(--green));
+    border-radius: 20px;
+    animation: grow 1.6s ease;
+}
+
+@keyframes grow {
+    from { width: 0; }
+}
+
+/* ---------- Hobby cards ---------- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: var(--white);
+    padding: 28px 22px;
+    text-align: center;
+    border-radius: 16px;
+    border-bottom: 4px solid var(--green);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-bottom-color: var(--orange);
+}
+
+.card-icon { font-size: 2.4rem; margin-bottom: 8px; }
+.card h3 { margin-bottom: 6px; }
+.card p { color: var(--grey); font-size: 0.95rem; }
+
+/* ---------- Mobile tweaks for inner pages ---------- */
+@media (max-width: 768px) {
+    .page-banner h1 { font-size: 2rem; }
+    .content-section { padding: 40px 6%; }
+}/* ---------- Projects page ---------- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 28px;
+}
+
+.project-card {
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.35s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.14);
+}
+
+.project-img {
+    height: 200px;
+    background: linear-gradient(135deg, var(--orange-soft), var(--green-soft));
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.5s;
+}
+
+.project-card:hover .project-img img { transform: scale(1.06); }
+
+.project-body { padding: 22px; }
+.project-body h3 { margin-bottom: 8px; }
+.project-body p { color: var(--grey); font-size: 0.95rem; }
+
+.tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0;
+}
+
+.tags li {
+    background: var(--green-soft);
+    color: var(--green-dark);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.project-links .btn-small {
+    margin-top: 6px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+.video-box {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-box video {
+    width: 100%;
+    border-radius: 16px;
+    border: 4px solid var(--orange);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    background: #000;
+}/* =========================================
+   AISHAT ABU-SULE - ACADEMIC PLANNER
+   Miva Open University | Software Engineering
+========================================= */
+
+/* Academic Information */
+
+.academic-info {
+    background: #fafafa;
+    padding: 20px 24px;
+    margin: 22px 0;
+    border-left: 5px solid var(--orange);
+    border-radius: 12px;
+}
+
+.academic-info p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: var(--grey);
+}
+
+.academic-info strong {
+    color: var(--green-dark);
+}
+
+.planner-card {
+    max-width: 850px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--orange);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.planner-card hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 28px 0;
+}
+
+.planner-card > p {
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+/* Task Input Form */
+
+.task-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.task-form input[type="text"] {
+    flex: 2;
+    min-width: 200px;
+}
+
+.task-form input[type="date"] {
+    flex: 1;
+    min-width: 150px;
+}
+
+.task-form input {
+    padding: 13px 16px;
+    border: 2px solid var(--line);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--grey);
+    background: var(--white);
+    transition: 0.3s ease;
+}
+
+.task-form input:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 4px var(--green-soft);
+}
+
+.task-form .btn {
+    margin: 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* Form Feedback */
+
+.form-message {
+    min-height: 24px;
+    margin: 10px 0;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-message.error {
+    color: #d62828;
+}
+
+.form-message.success {
+    color: var(--green-dark);
+}
+
+/* Task Statistics */
+
+.planner-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.stat {
+    background: #f3f3f3;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.stat strong {
+    font-size: 1rem;
+    margin-left: 3px;
+}
+
+.stat-green {
+    background: var(--green-soft);
+    color: var(--green-dark);
+}
+
+.stat-orange {
+    background: var(--orange-soft);
+    color: var(--orange-dark);
+}
+
+/* Task Filters */
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 22px 0 18px;
+}
+
+.filter-btn {
+    padding: 8px 19px;
+    border: 2px solid var(--line);
+    background: var(--white);
+    color: var(--grey);
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--green);
+    color: var(--green-dark);
+}
+
+.filter-btn.active {
+    background: var(--green);
+    border-color: var(--green);
+    color: var(--white);
+}
+
+/* Task List */
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    margin-bottom: 12px;
+    background: #fafafa;
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--orange);
+    border-radius: 12px;
+    animation: fadeUp 0.4s ease;
+    transition: 0.3s ease;
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+}
+
+/* Task Checkbox */
+
+.task-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    accent-color: var(--green);
+    cursor: pointer;
+}
+
+/* Task Description */
+
+.task-details {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.task-name {
+    font-weight: 600;
+    color: var(--grey);
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.task-date {
+    color: var(--grey);
+    font-size: 0.82rem;
+}
+
+/* Completed Tasks */
+
+.task-item.completed {
+    border-left-color: var(--green);
+    background: var(--green-soft);
+    opacity: 0.8;
+}
+
+.task-item.completed .task-name {
+    text-decoration: line-through;
+    color: var(--grey);
+}
+
+/* Delete Task Button */
+
+.delete-btn {
+    flex-shrink: 0;
+    background: transparent;
+    color: #d62828;
+    border: 2px solid #d62828;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    transition: 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: #d62828;
+    color: var(--white);
+}
+
+/* Empty Planner Message */
+
+.empty-message {
+    text-align: center;
+    color: var(--grey);
+    padding: 28px 10px;
+    line-height: 1.6;
+}
+
+/* Clear Completed Button */
+
+.btn-small {
+    padding: 9px 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-family: inherit;
+    margin-top: 10px;
+}
+
+/* Mobile Responsiveness */
+
+@media (max-width: 600px) {
+
+    .planner-card {
+        padding: 24px 16px;
+        border-radius: 14px;
+    }
+
+    .academic-info {
+        padding: 16px;
+    }
+
+    .task-form {
+        flex-direction: column;
+    }
+
+    .task-form input[type="text"],
+    .task-form input[type="date"],
+    .task-form .btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .planner-stats {
+        gap: 8px;
+    }
+
+    .stat {
+        font-size: 0.82rem;
+        padding: 7px 12px;
+    }
+
+    .task-item {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .delete-btn {
+        padding: 5px 10px;
+    }
+
+    .filters {
+        gap: 6px;
+    }
+
+    .filter-btn {
+        padding: 7px 13px;
+    }
+}/* =========================================
+   AISHAT ABU-SULE - CONTACT PAGE
+========================================= */
+
+.contact-container {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Contact Information */
+
+.contact-info,
+.contact-form-card {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+}
+
+.contact-info {
+    border-top: 5px solid var(--orange);
+}
+
+.contact-form-card {
+    border-top: 5px solid var(--green);
+}
+
+.contact-info h2,
+.contact-form-card h2 {
+    margin-bottom: 16px;
+    color: var(--green-dark);
+}
+
+.contact-info > p,
+.contact-form-card > p {
+    line-height: 1.8;
+    color: var(--grey);
+    margin-bottom: 18px;
+}
+
+/* Contact Details */
+
+.contact-details {
+    margin-top: 28px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green-soft);
+    border-radius: 12px;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-item h3 {
+    font-size: 1rem;
+    color: var(--green-dark);
+    margin-bottom: 4px;
+}
+
+.contact-item p {
+    color: var(--grey);
+    overflow-wrap: anywhere;
+}
+
+/* Social Links */
+
+.social-links {
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+    margin-top: 25px;
+}
+
+.social-links h3 {
+    margin-bottom: 15px;
+    color: var(--green-dark);
+}
+
+.social-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--green-dark);
+    border: 1px solid var(--green);
+    padding: 8px 16px;
+    margin: 0 8px 8px 0;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--green);
+    color: var(--white);
+}
+
+/* Contact Form */
+
+.contact-form-card form {
+    margin-top: 22px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--green-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 2px solid var(--line);
+    border-radius: 11px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--grey);
+    background: var(--white);
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 4px var(--green-soft);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contact-form-card .btn {
+    width: 100%;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* Contact Form Feedback */
+
+#contactMessage {
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+/* Mobile Responsiveness */
+
+@media (max-width: 768px) {
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .contact-info,
+    .contact-form-card {
+        padding: 25px 20px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .contact-info,
+    .contact-form-card {
+        padding: 22px 16px;
+    }
+
+    .contact-item {
+        gap: 10px;
+    }
+
+}/* ==========================================
+   CONTACT PAGE - AISHAT IKPEMOSI ABU-SULE
+   Refined orange and green design
+========================================== */
+
+/* Contact page background spacing */
+
+.contact-hero {
+    text-align: center;
+    padding: 65px 20px 50px;
+    background: linear-gradient(
+        135deg,
+        var(--orange-soft),
+        var(--green-soft)
+    );
+}
+
+.contact-hero .eyebrow {
+    display: inline-block;
+    padding: 8px 18px;
+    margin-bottom: 16px;
+    border-radius: 30px;
+    background: var(--white);
+    color: var(--green);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.contact-hero h1 {
+    margin-bottom: 14px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+}
+
+.contact-hero h1 span {
+    color: var(--orange);
+}
+
+.contact-hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--grey);
+    line-height: 1.8;
+}
+
+
+/* Main contact layout */
+
+.contact-wrapper {
+    max-width: 1150px;
+    margin: 55px auto;
+    padding: 0 20px 50px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+
+/* Contact information panel */
+
+.contact-info-card {
+    padding: 38px 30px;
+    background: linear-gradient(
+        160deg,
+        var(--orange-soft),
+        var(--green-soft)
+    );
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.contact-info-card h2 {
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+}
+
+.contact-info-card > p {
+    color: var(--grey);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+
+/* Individual contact details */
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.contact-item:last-of-type {
+    border-bottom: none;
+}
+
+.contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    background: var(--white);
+    border-radius: 13px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    font-size: 1.2rem;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--black);
+    font-size: 0.9rem;
+}
+
+.contact-item a,
+.contact-item span {
+    color: var(--grey);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.contact-item a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-item a:hover {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+
+/* Social links */
+
+.contact-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+}
+
+.contact-socials a {
+    display: inline-block;
+    padding: 9px 15px;
+    border: 1px solid var(--green);
+    border-radius: 25px;
+    color: var(--green);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-socials a:hover {
+    background: var(--green);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+
+/* Contact form card */
+
+.contact-form-card {
+    padding: 38px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.contact-form-card h2 {
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+}
+
+.contact-form-card > p {
+    color: var(--grey);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+
+/* Form fields */
+
+.contact-form-card .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form-card label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--black);
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 15px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--black);
+    font-family: inherit;
+    font-size: 0.92rem;
+    transition: 0.3s;
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+    outline: none;
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(230, 140, 40, 0.12);
+}
+
+.contact-form-card textarea {
+    min-height: 135px;
+    resize: vertical;
+}
+
+
+/* Submit button */
+
+.contact-form-card .btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form-card .btn:hover {
+    filter: brightness(0.92);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.contact-form-card .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* Form validation messages */
+
+.contact-form-card .error-text {
+    display: block;
+    min-height: 0;
+    margin-top: 6px;
+    color: #d32f2f;
+    font-size: 0.78rem;
+}
+
+.contact-form-card .success-box {
+    margin-top: 15px;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+
+/* Responsive design */
+
+@media (max-width: 850px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-hero {
+        padding: 45px 18px 35px;
+    }
+
+    .contact-wrapper {
+        margin: 30px auto;
+        padding: 0 15px 35px;
+    }
+
+    .contact-info-card,
+    .contact-form-card {
+        padding: 24px 20px;
+    }
+
+    .contact-info-card h2,
+    .contact-form-card h2 {
+        font-size: 1.45rem;
+    }
+
+    .contact-item {
+        gap: 11px;
+    }
+}/* =====================================================
+   HOMEPAGE REFINEMENT (added on top, nothing removed)
+   ===================================================== */
+
+/* ----- Hero background: soft dot grid ----- */
+.hero {
+    min-height: 78vh;
+    background:
+        radial-gradient(circle at 1px 1px, rgba(17, 17, 17, 0.08) 1.2px, transparent 0) 0 0 / 24px 24px,
+        linear-gradient(135deg, #ffffff 50%, var(--orange-soft) 100%);
+}
+
+/* ----- Staggered entrance of the text ----- */
+.hero-text { animation: none; }
+
+.hero-text > * { animation: fadeUp 0.8s ease backwards; }
+.hero-text > :nth-child(1) { animation-delay: 0.05s; }
+.hero-text > :nth-child(2) { animation-delay: 0.20s; }
+.hero-text > :nth-child(3) { animation-delay: 0.35s; }
+.hero-text > :nth-child(4) { animation-delay: 0.50s; }
+.hero-text > :nth-child(5) { animation-delay: 0.65s; }
+.hero-text > :nth-child(6) { animation-delay: 0.75s; }
+
+/* ----- Greeting badge with a pulsing dot ----- */
+.hero-text .greeting {
+    display: inline-flex;
+    align-items: center;
+    background: var(--white);
+    border: 1px solid var(--green-soft);
+    box-shadow: 0 4px 14px rgba(31, 170, 89, 0.15);
+}
+
+.hero-text .greeting::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    margin-right: 10px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(31, 170, 89, 0.55); }
+    70%  { box-shadow: 0 0 0 10px rgba(31, 170, 89, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(31, 170, 89, 0); }
+}
+
+/* ----- Name: tighter type + green marker underline ----- */
+.hero h1 {
+    font-size: clamp(2.3rem, 4.6vw, 3.4rem);
+    letter-spacing: -1px;
+    line-height: 1.15;
+}
+
+.hero h1 .highlight {
+    background: linear-gradient(transparent 68%, rgba(31, 170, 89, 0.28) 68%);
+    padding: 0 4px;
+}
+
+/* ----- Job title with a small orange line ----- */
+.hero-text .tagline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.05rem;
+    letter-spacing: 0.4px;
+    margin: 6px 0 16px;
+}
+
+.hero-text .tagline::before {
+    content: "";
+    flex: none;
+    width: 38px;
+    height: 3px;
+    background: var(--orange);
+    border-radius: 3px;
+}
+
+.hero-text p { max-width: 520px; }
+
+/* ----- Buttons: arrow that slides on hover ----- */
+.hero .btn::after {
+    content: "\2192";
+    display: inline-block;
+    margin-left: 8px;
+    transition: transform 0.3s;
+}
+
+.hero .btn:hover::after { transform: translateX(6px); }
+
+/* ----- Photo: arch shape, offset outline, floating badge ----- */
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    display: block;
+    border-radius: 999px 999px 28px 28px;
+    border: 6px solid var(--white);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* orange outline sitting behind the photo */
+.hero-image::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 320px;
+    height: 400px;
+    border: 3px solid var(--orange);
+    border-radius: 999px 999px 28px 28px;
+    transform: translate(calc(-50% + 20px), calc(-50% + 20px));
+    z-index: -1;
+}
+
+/* floating badge */
+.hero-image::after {
+    content: "\1F4BB  Software Engineering";
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    margin-left: -215px;
+    padding: 10px 18px;
+    background: var(--white);
+    color: var(--black);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+    border-left: 4px solid var(--green);
+    animation: float 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+}
+
+/* ----- About card: big quotation mark ----- */
+.bio::before {
+    content: "\201C";
+    display: block;
+    height: 46px;
+    font-family: Georgia, serif;
+    font-size: 5.5rem;
+    line-height: 1;
+    color: var(--orange);
+}
+
+/* ----- Mobile versions ----- */
+@media (max-width: 768px) {
+    .hero { min-height: auto; }
+
+    .hero-text .tagline { justify-content: center; }
+    .hero-text p { margin-left: auto; margin-right: auto; }
+
+    .hero-image::before {
+        width: 240px;
+        height: 300px;
+        transform: translate(calc(-50% + 12px), calc(-50% + 12px));
+    }
+
+    .hero-image::after {
+        bottom: -14px;
+        margin-left: -105px;
+        font-size: 0.8rem;
+    }
+}/* Keep the header in one horizontal line */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 22px;
+}
+
+.nav-links a {
+    white-space: nowrap;
+}/* =====================================================
+   AISHAT IKPEMOSI ABU-SULE
+   PERSONAL PORTFOLIO - SIGNATURE DESIGN
+   Additional styling: keep all existing CSS
+   ===================================================== */
+
+
+/* 1. PERSONAL BRANDING IN THE HEADER */
+
+.site-header {
+    border-bottom: 1px solid rgba(31, 170, 89, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.site-header .logo {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.site-header .logo-badge {
+    position: relative;
+    border-radius: 12px 12px 12px 4px;
+    box-shadow: 0 5px 14px rgba(31, 170, 89, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.site-header .logo:hover .logo-badge {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+
+/* 2. CUSTOM NAVIGATION UNDERLINE */
+
+.nav-links a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: var(--orange);
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* 3. PERSONAL SOFTWARE ENGINEERING SIGNATURE */
+
+.hero-text::before {
+    content: "MIVA OPEN UNIVERSITY  /  SOFTWARE ENGINEERING";
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 9px 13px;
+    border-left: 3px solid var(--orange);
+    background: rgba(31, 170, 89, 0.07);
+    color: var(--green);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    border-radius: 0 7px 7px 0;
+}
+
+
+/* 4. A MORE DISTINCTIVE HERO BACKGROUND */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 8%;
+    right: -100px;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(31, 170, 89, 0.16);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 25px rgba(31, 170, 89, 0.025),
+        0 0 0 55px rgba(31, 170, 89, 0.025);
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* 5. MAKE THE HIGHLIGHT MORE SIGNATURE-LIKE */
+
+.hero h1 .highlight {
+    position: relative;
+    display: inline-block;
+    color: var(--green);
+}
+
+.hero h1 .highlight::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 65%;
+    height: 4px;
+    background: var(--orange);
+    border-radius: 5px;
+}
+
+
+/* 6. MORE CHARACTER FOR THE MAIN BUTTONS */
+
+.btn {
+    border-radius: 9px;
+    letter-spacing: 0.2px;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+
+/* 7. CUSTOM SECTION HEADING DETAILS */
+
+.content-section h2 {
+    position: relative;
+}
+
+.content-section h2::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 3px;
+    margin-top: 9px;
+    background: linear-gradient(
+        to right,
+        var(--orange) 65%,
+        var(--green) 65%
+    );
+    border-radius: 5px;
+}
+
+
+/* 8. GIVE THE ABOUT BIO A PERSONAL EDITORIAL FEEL */
+
+.bio {
+    position: relative;
+    border-left: 3px solid var(--orange);
+    padding-left: 22px;
+    line-height: 1.9;
+}
+
+
+/* 9. CUSTOM INTERACTION FOR LINKS */
+
+a {
+    transition: color 0.25s ease;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 4px;
+}
+
+
+/* 10. CUSTOM TEXT SELECTION */
+
+::selection {
+    background: var(--green);
+    color: #ffffff;
+}
+
+
+/* 11. SUBTLE PAGE SCROLLBAR */
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-color: var(--green) var(--orange-soft);
+    scrollbar-width: thin;
+}
+
+
+/* 12. MOBILE REFINEMENTS */
+
+@media (max-width: 768px) {
+
+    .hero::before {
+        width: 170px;
+        height: 170px;
+        right: -85px;
+        top: 5%;
+    }
+
+    .hero-text::before {
+        font-size: 0.62rem;
+        letter-spacing: 0.8px;
+    }
+
+    .hero h1 .highlight::after {
+        bottom: -5px;
+        height: 3px;
+    }
+
+    .content-section h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* 13. ACCESSIBILITY: RESPECT REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}/* =========================================
+   AISHAT'S NEW COLOUR IDENTITY
+   Royal Blue + Orange + White
+   ========================================= */
+
+:root {
+    --green: #263F7A;
+    --green-dark: #1C2F5C;
+    --green-soft: #E9EEFA;
+}
+
+/* Update existing decorative green effects */
+
+.site-header {
+    border-bottom-color: rgba(38, 63, 122, 0.12);
+}
+
+.site-header .logo-badge {
+    box-shadow: 0 5px 14px rgba(38, 63, 122, 0.20);
+}
+
+.hero-text .greeting {
+    border-color: #E9EEFA;
+    box-shadow: 0 4px 14px rgba(38, 63, 122, 0.15);
+}
+
+.hero-text .greeting::before {
+    background: #263F7A;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(38, 63, 122, 0.55); }
+    70% { box-shadow: 0 0 0 10px rgba(38, 63, 122, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(38, 63, 122, 0); }
+}
+
+.hero h1 .highlight {
+    background: linear-gradient(
+        transparent 68%,
+        rgba(38, 63, 122, 0.20) 68%
+    );
+}
+
+.hero::before {
+    border-color: rgba(38, 63, 122, 0.16);
+    box-shadow:
+        0 0 0 25px rgba(38, 63, 122, 0.025),
+        0 0 0 55px rgba(38, 63, 122, 0.025);
+}
+
+::selection {
+    background: #263F7A;
+    color: #FFFFFF;
+}/* =========================================
+   FINAL PORTFOLIO COLOUR IDENTITY
+   Royal Blue + Soft Orange + White
+   ========================================= */
+
+:root {
+    /* Blue replaces the old green */
+    --green: #263F7A;
+    --green-dark: #1C2F5C;
+    --green-soft: #E9EEFA;
+
+    /* Softer orange accents */
+    --orange: #E58A4F;
+    --orange-dark: #C96F37;
+    --orange-soft: #FFF0E5;
+}
+
+/* HEADER */
+.site-header {
+    border-bottom-color: rgba(38, 63, 122, 0.12);
+}
+
+.site-header .logo-badge {
+    box-shadow: 0 5px 14px rgba(38, 63, 122, 0.20);
+}
+
+/* HERO SECTION */
+.hero-text .greeting {
+    border-color: #E9EEFA;
+    box-shadow: 0 4px 14px rgba(38, 63, 122, 0.15);
+}
+
+.hero-text .greeting::before {
+    background: #263F7A;
+}
+
+.hero h1 .highlight {
+    background: linear-gradient(
+        transparent 68%,
+        rgba(38, 63, 122, 0.20) 68%
+    );
+}
+
+.hero::before {
+    border-color: rgba(38, 63, 122, 0.16);
+    box-shadow: 0 0 35px rgba(38, 63, 122, 0.08);
+}
+
+/* BLUE ANIMATION */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(38, 63, 122, 0.25);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(38, 63, 122, 0);
+    }
+}
+
+/* TEXT SELECTION */
+::selection {
+    background: #263F7A;
+    color: #FFFFFF;
+}
+
+/* BUTTONS AND LINKS */
+button,
+.btn,
+.button {
+    transition: all 0.3s ease;
+}
+
+/* CONTACT SECTION */
+.contact-info-card,
+.contact-form-card {
+    border-color: rgba(38, 63, 122, 0.12);
+}
+
+/* SOFTER ORANGE HIGHLIGHTS */
+.logo-badge,
+.hero-text .greeting,
+button,
+.btn,
+.button {
+    transition: all 0.3s ease;
+}/* =====================================================
+   AISHAT'S SIGNATURE PORTFOLIO DESIGN
+   GRAPHITE + TANGERINE + WHITE
+   Final visual refinement
+   ===================================================== */
+
+:root {
+    /* Replace old blue/green identity */
+    --green: #292D35;
+    --green-dark: #20232A;
+    --green-soft: #F0F1F3;
+
+    /* New vibrant but elegant orange */
+    --orange: #F47738;
+    --orange-dark: #D95D27;
+    --orange-soft: #FFF0E7;
+
+    /* Supporting colours */
+    --white: #FFFFFF;
+    --black: #292D35;
+    --grey: #747982;
+    --line: #E6E8EB;
+}
+
+/* =====================================================
+   1. NAVIGATION
+   ===================================================== */
+
+.site-header {
+    background: #FFFFFF;
+    border-bottom: 1px solid #E9EAED;
+}
+
+.site-header .logo {
+    color: #292D35;
+}
+
+.site-header .logo-badge {
+    background: #F47738;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(244, 119, 56, 0.18);
+}
+
+.nav-links a {
+    color: #555B65;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #F47738;
+}
+
+/* =====================================================
+   2. HOMEPAGE BACKGROUND
+   ===================================================== */
+
+.hero {
+    background:
+        radial-gradient(
+            circle at 1px 1px,
+            rgba(41, 45, 53, 0.055) 1px,
+            transparent 0
+        ) 0 0 / 26px 26px,
+        linear-gradient(
+            135deg,
+            #FFFFFF 65%,
+            #FFF5EF 100%
+        );
+}
+
+/* =====================================================
+   3. GREETING BADGE
+   ===================================================== */
+
+.hero-text .greeting {
+    background: #FFFFFF;
+    border: 1px solid #F3E5DC;
+    color: #555B65;
+    box-shadow: 0 4px 15px rgba(41, 45, 53, 0.06);
+}
+
+.hero-text .greeting::before {
+    background: #F47738;
+    animation: pulse 1.8s infinite;
+}
+
+/* =====================================================
+   4. YOUR NAME - CLEANER TYPOGRAPHY
+   ===================================================== */
+
+.hero h1 {
+    color: #292D35;
+    font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+    line-height: 1.18;
+    letter-spacing: -1.3px;
+    font-weight: 750;
+}
+
+/* Remove the old blue highlight */
+.hero h1 .highlight {
+    color: #292D35;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+/* =====================================================
+   5. SOFTWARE ENGINEERING DESCRIPTION
+   ===================================================== */
+
+.hero-text .tagline {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 500;
+    color: #646A74;
+    letter-spacing: 0.1px;
+    border-left: 3px solid #F47738;
+    padding-left: 15px;
+    margin: 18px 0;
+}
+
+.hero-text .tagline::before {
+    display: none;
+    content: none;
+}
+
+/* =====================================================
+   6. YOUR PROFILE PHOTO
+   ===================================================== */
+
+.hero-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+}
+
+/* Remove the old orange frame and floating badge */
+.hero-image::before,
+.hero-image::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* New professional photograph frame */
+.hero-image img {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: 440px;
+    object-fit: cover;
+    object-position: center 12%;
+
+    border: 5px solid #FFFFFF;
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 45px rgba(41, 45, 53, 0.13),
+        0 3px 10px rgba(41, 45, 53, 0.05);
+
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+.hero-image img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(41, 45, 53, 0.17);
+}
+
+/* =====================================================
+   7. BUTTONS
+   ===================================================== */
+
+.btn {
+    background: #F47738;
+    color: #FFFFFF;
+    border: 1px solid #F47738;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #D95D27;
+    border-color: #D95D27;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(244, 119, 56, 0.18);
+}
+
+/* =====================================================
+   8. CONTACT PAGE
+   ===================================================== */
+
+.contact-tile {
+    background: #FFFFFF;
+    border-color: #E6E8EB;
+}
+
+.contact-tile::before {
+    background: #F47738;
+}
+
+.contact-tile:nth-child(even)::before {
+    background: #292D35;
+}
+
+.contact-tile .tile-icon {
+    background: #FFF0E7;
+}
+
+.contact-tile:nth-child(even) .tile-icon {
+    background: #F0F1F3;
+}
+
+.contact-side {
+    background: linear-gradient(
+        145deg,
+        #FFF0E7,
+        #F4F5F7
+    );
+    border-color: #E6E8EB;
+}
+
+.contact-side h2::after {
+    background: #F47738;
+}
+
+.side-icon {
+    color: #F47738;
+}
+
+.side-list li {
+    border-bottom-color: rgba(41, 45, 53, 0.09);
+}
+
+.form-card {
+    background: #FFFFFF;
+    border-color: #E6E8EB;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+    outline: none;
+    border-color: #F47738;
+    box-shadow: 0 0 0 3px rgba(244, 119, 56, 0.10);
+}
+
+/* =====================================================
+   9. ACADEMIC PLANNER
+   ===================================================== */
+
+.planner-card {
+    border-top-color: #F47738;
+}
+
+.task-item {
+    border-left-color: #F47738;
+}
+
+.task-item.completed {
+    border-left-color: #292D35;
+}
+
+.filter-btn.active {
+    background: #292D35;
+    border-color: #292D35;
+    color: #FFFFFF;
+}
+
+/* =====================================================
+   10. GENERAL POLISH
+   ===================================================== */
+
+a {
+    transition: color 0.3s ease;
+}
+
+::selection {
+    background: #F47738;
+    color: #FFFFFF;
+}
+
+/* Respect users who prefer reduced animation */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =====================================================
+   11. RESPONSIVE PHOTO AND TYPOGRAPHY
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: clamp(2.1rem, 8vw, 2.8rem);
+        letter-spacing: -0.8px;
+    }
+
+    .hero-image img {
+        max-width: 300px;
+        height: 380px;
+        object-position: center 10%;
+    }
+
+    .hero-text .tagline {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image img {
+        max-width: 270px;
+        height: 350px;
+    }
+}/* =========================================
+   CONTACT PAGE - FINAL COLOUR OVERRIDE
+   ========================================= */
+
+.contact-grid {
+    background: transparent !important;
+}
+
+.contact-tile {
+    background: #FFFFFF !important;
+    border: 1px solid #E6E8EB !important;
+}
+
+.contact-tile::before {
+    background: #F47738 !important;
+}
+
+.contact-tile:nth-child(even)::before {
+    background: #292D35 !important;
+}
+
+.contact-tile .tile-icon {
+    background: #FFF0E7 !important;
+    color: #D95D27 !important;
+}
+
+.contact-tile:nth-child(even) .tile-icon {
+    background: #F0F1F3 !important;
+    color: #292D35 !important;
+}
+
+.contact-side {
+    background: linear-gradient(
+        145deg,
+        #FFF0E7,
+        #F4F5F7
+    ) !important;
+    border: 1px solid #E6E8EB !important;
+}
+
+.contact-side h2,
+.form-card h2 {
+    color: #292D35 !important;
+}
+
+.contact-side h2::after {
+    background: #F47738 !important;
+}
+
+.side-icon {
+    background: #FFFFFF !important;
+    color: #F47738 !important;
+}
+
+.side-list li {
+    border-bottom-color: #E6E8EB !important;
+}
+
+.form-card {
+    background: #FFFFFF !important;
+    border: 1px solid #E6E8EB !important;
+}
+
+.form-card input,
+.form-card textarea {
+    border-color: #E6E8EB;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+    border-color: #F47738 !important;
+    box-shadow: 0 0 0 3px rgba(244, 119, 56, 0.12) !important;
+}
+
+#contactForm .btn {
+    background: #F47738 !important;
+    border-color: #F47738 !important;
+    color: #FFFFFF !important;
+}
+
+#contactForm .btn:hover {
+    background: #D95D27 !important;
+    border-color: #D95D27 !important;
+}/* ==========================================
+   AISHAT'S CONTACT PAGE - GREEN REMOVAL
+   Correcting the original info-card selectors
+   ========================================== */
+
+/* Main information panel */
+.info-card,
+.contact-grid .info-card,
+.contact-side {
+    background: #FFF0E7 !important;
+    background-image: none !important;
+    border: 1px solid #F0DED2 !important;
+    border-radius: 20px !important;
+    box-shadow: 0 12px 30px rgba(41, 45, 53, 0.07);
+    color: #292D35 !important;
+}
+
+/* Remove old green decorative elements */
+.info-card::before,
+.info-card::after {
+    background: #F47738 !important;
+}
+
+/* Panel headings */
+.info-card h2,
+.contact-side h2 {
+    color: #292D35 !important;
+}
+
+/* Contact details */
+.info-list,
+.side-list {
+    list-style: none;
+}
+
+.info-list li,
+.side-list li {
+    color: #292D35 !important;
+    border-bottom-color: #EADDD5 !important;
+}
+
+/* Contact links */
+.info-card a,
+.contact-side a {
+    color: #292D35 !important;
+}
+
+.info-card a:hover,
+.contact-side a:hover {
+    color: #D95D27 !important;
+}
+
+/* Icons */
+.info-list li span,
+.side-icon {
+    background: #FFFFFF !important;
+    color: #F47738 !important;
+}
+
+/* Small information text */
+.info-note {
+    color: #747982 !important;
+}
+
+/* Form panel */
+.form-card {
+    background: #FFFFFF !important;
+    border: 1px solid #E6E8EB !important;
+    border-radius: 20px !important;
+    box-shadow: 0 12px 30px rgba(41, 45, 53, 0.06);
+}
+
+.form-card h2 {
+    color: #292D35 !important;
+}
+
+/* Form inputs */
+.form-card input,
+.form-card textarea {
+    background: #FFFFFF !important;
+    color: #292D35 !important;
+    border: 1px solid #DDE0E5 !important;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+    border-color: #F47738 !important;
+    box-shadow: 0 0 0 3px rgba(244, 119, 56, 0.12) !important;
+}
+
+/* Send button */
+#contactForm .btn {
+    background: #F47738 !important;
+    color: #FFFFFF !important;
+    border-color: #F47738 !important;
+}
+
+#contactForm .btn:hover {
+    background: #D95D27 !important;
+}
+
+
+/* ==========================================
+   AISHAT IKPEMOSI ABU-SULE
+   CONTACT PAGE - SIGNATURE COLOUR DESIGN
+   ========================================== */
+
+/* Contact information panel */
+.contact-info-card,
+.info-card,
+.contact-side {
+    background: linear-gradient(
+        145deg,
+        #FFFFFF 0%,
+        #FFF4EC 100%
+    ) !important;
+
+    background-color: #FFFFFF !important;
+    background-image: linear-gradient(
+        145deg,
+        #FFFFFF 0%,
+        #FFF4EC 100%
+    ) !important;
+
+    color: #292D35 !important;
+    border: 1px solid #F0E3DA !important;
+    border-top: 5px solid #F47738 !important;
+    border-radius: 20px !important;
+    box-shadow: 0 12px 30px rgba(41, 45, 53, 0.07) !important;
+}
+
+/* Panel headings */
+.contact-info-card h2,
+.contact-info-card h3,
+.contact-info-card strong,
+.info-card h2,
+.info-card h3,
+.contact-side h2 {
+    color: #292D35 !important;
+}
+
+/* Paragraphs and contact details */
+.contact-info-card p,
+.contact-info-card span,
+.info-card p,
+.info-list li,
+.side-list li {
+    color: #454A54 !important;
+}
+
+/* Contact icons */
+.contact-info-card [class*="icon"],
+.info-list li span,
+.side-icon {
+    background: #FFF0E7 !important;
+    color: #E9682D !important;
+    border-radius: 12px;
+}
+
+/* GitHub, LinkedIn and WhatsApp links */
+.contact-info-card a,
+.info-card a,
+.contact-side a {
+    color: #D95D27 !important;
+    transition: 0.3s ease;
+}
+
+.contact-info-card a:hover,
+.info-card a:hover,
+.contact-side a:hover {
+    color: #A9431E !important;
+}
+
+/* Social buttons */
+.contact-info-card a[class*="btn"],
+.contact-info-card .social-links a {
+    background: #FFFFFF !important;
+    color: #D95D27 !important;
+    border: 1px solid #F47738 !important;
+}
+
+.contact-info-card a[class*="btn"]:hover,
+.contact-info-card .social-links a:hover {
+    background: #F47738 !important;
+    color: #FFFFFF !important;
+}
+
+/* Contact form card */
+.contact-grid .form-card {
+    background: #FFFFFF !important;
+    color: #292D35 !important;
+    border: 1px solid #E6E8EB !important;
+    border-radius: 20px !important;
+    box-shadow: 0 12px 30px rgba(41, 45, 53, 0.05) !important;
+}
+
+/* Form heading */
+.contact-grid h2 {
+    color: #292D35 !important;
+}
+
+/* Input fields */
+.contact-grid input,
+.contact-grid textarea {
+    background: #FFFFFF !important;
+    color: #292D35 !important;
+    border: 1px solid #DDE0E5 !important;
+    border-radius: 10px !important;
+}
+
+.contact-grid input:focus,
+.contact-grid textarea:focus {
+    outline: none !important;
+    border-color: #F47738 !important;
+    box-shadow: 0 0 0 4px rgba(244, 119, 56, 0.12) !important;
+}
+
+/* Send message button */
+#contactForm .btn {
+    background: #F47738 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #F47738 !important;
+    border-radius: 10px !important;
+}
+
+#contactForm .btn:hover {
+    background: #D95D27 !important;
+    border-color: #D95D27 !important;
+}
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+    .contact-info-card,
+    .info-card,
+    .contact-side {
+        border-radius: 16px !important;
+    }
+}
+
+<!-- Personal Introduction Video -->
+<section class="video-intro-section">
+    <div class="video-intro-container">
+
+        <div class="video-intro-heading">
+            <span class="video-eyebrow">A LITTLE INTRODUCTION</span>
+            <h2>Get to know me</h2>
+            <p>
+                A little about who I am, what I'm learning
+                and the journey I'm building in technology.
+            </p>
+        </div>
+
+        <div class="video-frame">
+            <video controls playsinline preload="metadata">
+                <source src="video/aishat-introduction.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+
+    </div>
+</section>   
+
+/* =========================================
+   CREATIVE INTRODUCTION VIDEO DESIGN
+   New styling override - keep existing CSS
+========================================= */
+
+.video-intro-section {
+    position: relative !important;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 90px 20px !important;
+    background:
+        radial-gradient(circle at 10% 15%, #FFF0E7 0, transparent 35%),
+        radial-gradient(circle at 90% 85%, #F8E9DE 0, transparent 35%),
+        #FAF9F7 !important;
+}
+
+.video-intro-container {
+    position: relative;
+    max-width: 950px !important;
+    margin: 0 auto !important;
+    padding: 48px 30px !important;
+    background: rgba(255, 255, 255, 0.88) !important;
+    border: 1px solid #F0E5DC !important;
+    border-radius: 26px !important;
+    box-shadow: 0 20px 60px rgba(41, 45, 53, 0.08) !important;
+}
+
+/* Heading area */
+
+.video-intro-heading {
+    max-width: 650px !important;
+    margin: 0 auto 35px !important;
+    text-align: center !important;
+}
+
+.video-eyebrow {
+    display: inline-block !important;
+    padding: 8px 16px !important;
+    margin-bottom: 18px !important;
+    background: #FFF0E7 !important;
+    color: #D95D27 !important;
+    border-radius: 30px !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.8px !important;
+    text-transform: uppercase;
+}
+
+.video-intro-heading h2 {
+    color: #292D35 !important;
+    font-size: clamp(2rem, 5vw, 3rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    margin: 0 0 15px !important;
+}
+
+.video-intro-heading p {
+    max-width: 550px !important;
+    margin: 0 auto !important;
+    color: #737780 !important;
+    font-size: 1rem !important;
+    line-height: 1.8 !important;
+}
+
+/* Beautiful video frame */
+
+.video-frame {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 390px !important;
+    margin: 0 auto !important;
+    padding: 8px !important;
+    overflow: hidden !important;
+    border-radius: 23px !important;
+    background: linear-gradient(
+        135deg,
+        #F47738,
+        #292D35 55%,
+        #F8C9A9
+    ) !important;
+    border: none !important;
+    box-shadow:
+        0 18px 40px rgba(41, 45, 53, 0.17),
+        0 5px 15px rgba(244, 119, 56, 0.12) !important;
+}
+
+.video-frame video {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 75vh !important;
+    object-fit: contain !important;
+    background: #292D35 !important;
+    border-radius: 16px !important;
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 600px) {
+    .video-intro-section {
+        padding: 55px 15px !important;
+    }
+
+    .video-intro-container {
+        padding: 35px 16px !important;
+        border-radius: 20px !important;
+    }
+
+    .video-intro-heading h2 {
+        font-size: 2rem !important;
+    }
+
+    .video-frame {
+        max-width: 100% !important;
+        border-radius: 18px !important;
+        padding: 6px !important;
+    }
+
+    .video-frame video {
+        border-radius: 13px !important;
+    }
+}
+
+/* Homepage time-based greeting */
+#greeting {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    margin: 0 0 14px;
+    padding: 9px 16px 9px 42px;
+    overflow: hidden;
+    border: 1px solid rgba(41, 45, 53, 0.1);
+    border-left: 4px solid #F47738;
+    border-radius: 5px 14px 14px 5px;
+    background: linear-gradient(110deg, #292D35, #3B4049);
+    color: #FFFFFF;
+    box-shadow: 0 8px 20px rgba(41, 45, 53, 0.14);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+#greeting::before {
+    content: "";
+    position: absolute;
+    left: 17px;
+    width: 15px;
+    height: 15px;
+    background: #F47738;
+    clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
+    animation: greetingGlow 2s ease-out infinite;
+}
+
+@keyframes greetingGlow {
+    70% { transform: rotate(45deg) scale(0.82); }
+    100% { transform: rotate(90deg) scale(1); }
+}
+
+@media (max-width: 768px) {
+    #greeting {
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 10px 5% 8px;
+    }
+
+    .site-header .logo {
+        font-size: 1.35rem;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        border: 1px solid #E6E8EB;
+        border-radius: 10px;
+        background: #FFFFFF;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 2px;
+        background: #292D35;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:first-child {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:last-child {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .site-header nav {
+        width: 100%;
+        display: none;
+        padding-top: 8px;
+        border-top: 1px solid #E6E8EB;
+    }
+
+    .site-header.menu-open nav {
+        display: block;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 9px 12px;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        color: #555B65;
+        font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+        border-color: #F3E5DC;
+        background: #FFF0E7;
+        color: #D95D27;
+    }
+
+    .nav-links a.active {
+        border-color: #292D35;
+        background: #292D35;
+        color: #FFFFFF;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
